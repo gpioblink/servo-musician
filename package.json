@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "ts-node src/index.ts",
+    "dev:watch": "ts-node-dev --respawn src/index.ts"
   },
   "author": "",
   "license": "ISC",
@@ -12,7 +14,8 @@
     "typescript": "^3.6.2"
   },
   "devDependencies": {
-    "@types/node": "^12.7.3"
+    "@types/node": "^12.7.3",
+    "ts-node-dev": "^1.0.0-pre.42"
   },
   "keywords": [],
   "description": ""
