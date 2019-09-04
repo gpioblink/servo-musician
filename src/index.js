@@ -57,30 +57,6 @@ obniz.onconnect = function () {
                     return [4 /*yield*/, servo2.angle(180)];
                 case 2:
                     _a.sent();
-                    return [4 /*yield*/, moveToPiano('Do', servo0, servo1, servo2, servo3)];
-                case 3:
-                    _a.sent();
-                    return [4 /*yield*/, moveToPiano('si', servo0, servo1, servo2, servo3)];
-                case 4:
-                    _a.sent();
-                    return [4 /*yield*/, moveToPiano('ra', servo0, servo1, servo2, servo3)];
-                case 5:
-                    _a.sent();
-                    return [4 /*yield*/, moveToPiano('so', servo0, servo1, servo2, servo3)];
-                case 6:
-                    _a.sent();
-                    return [4 /*yield*/, moveToPiano('fa', servo0, servo1, servo2, servo3)];
-                case 7:
-                    _a.sent();
-                    return [4 /*yield*/, moveToPiano('mi', servo0, servo1, servo2, servo3)];
-                case 8:
-                    _a.sent();
-                    return [4 /*yield*/, moveToPiano('re', servo0, servo1, servo2, servo3)];
-                case 9:
-                    _a.sent();
-                    return [4 /*yield*/, moveToPiano('do', servo0, servo1, servo2, servo3)];
-                case 10:
-                    _a.sent();
                     process.stdin.on('data', function (chunk) {
                         return __awaiter(this, void 0, void 0, function () {
                             var lineString, line;
@@ -120,7 +96,59 @@ obniz.onconnect = function () {
                             });
                         });
                     });
-                    return [2 /*return*/];
+                    _a.label = 3;
+                case 3:
+                    if (!true) return [3 /*break*/, 20];
+                    return [4 /*yield*/, moveToPiano('Do', servo0, servo1, servo2, servo3)];
+                case 4:
+                    _a.sent();
+                    return [4 /*yield*/, moveToPiano('si', servo0, servo1, servo2, servo3)];
+                case 5:
+                    _a.sent();
+                    return [4 /*yield*/, moveToPiano('ra', servo0, servo1, servo2, servo3)];
+                case 6:
+                    _a.sent();
+                    return [4 /*yield*/, moveToPiano('so', servo0, servo1, servo2, servo3)];
+                case 7:
+                    _a.sent();
+                    return [4 /*yield*/, moveToPiano('fa', servo0, servo1, servo2, servo3)];
+                case 8:
+                    _a.sent();
+                    return [4 /*yield*/, moveToPiano('mi', servo0, servo1, servo2, servo3)];
+                case 9:
+                    _a.sent();
+                    return [4 /*yield*/, moveToPiano('re', servo0, servo1, servo2, servo3)];
+                case 10:
+                    _a.sent();
+                    return [4 /*yield*/, moveToPiano('do', servo0, servo1, servo2, servo3)];
+                case 11:
+                    _a.sent();
+                    return [4 /*yield*/, moveToPiano('do', servo0, servo1, servo2, servo3)];
+                case 12:
+                    _a.sent();
+                    return [4 /*yield*/, moveToPiano('re', servo0, servo1, servo2, servo3)];
+                case 13:
+                    _a.sent();
+                    return [4 /*yield*/, moveToPiano('mi', servo0, servo1, servo2, servo3)];
+                case 14:
+                    _a.sent();
+                    return [4 /*yield*/, moveToPiano('fa', servo0, servo1, servo2, servo3)];
+                case 15:
+                    _a.sent();
+                    return [4 /*yield*/, moveToPiano('so', servo0, servo1, servo2, servo3)];
+                case 16:
+                    _a.sent();
+                    return [4 /*yield*/, moveToPiano('ra', servo0, servo1, servo2, servo3)];
+                case 17:
+                    _a.sent();
+                    return [4 /*yield*/, moveToPiano('si', servo0, servo1, servo2, servo3)];
+                case 18:
+                    _a.sent();
+                    return [4 /*yield*/, moveToPiano('Do', servo0, servo1, servo2, servo3)];
+                case 19:
+                    _a.sent();
+                    return [3 /*break*/, 3];
+                case 20: return [2 /*return*/];
             }
         });
     });
@@ -137,15 +165,15 @@ function moveToPiano(soundCode, servo0, servo1, servo2, servo3) {
                         "si": { servo0: 82, servo1: 130, servo2: 124, servo3: 88 },
                         "ra": { servo0: 82, servo1: 140, servo2: 124, servo3: 100 },
                         "so": { servo0: 82, servo1: 152, servo2: 136, servo3: 110 },
-                        "fa": { servo0: 82, servo1: 152, servo2: 136, servo3: 120 },
-                        "mi": { servo0: 82, servo1: 150, servo2: 133, servo3: 133 },
+                        "fa": { servo0: 82, servo1: 152, servo2: 137, servo3: 120 },
+                        "mi": { servo0: 82, servo1: 150, servo2: 135, servo3: 133 },
                         "re": { servo0: 82, servo1: 150, servo2: 130.7, servo3: 143 },
                         "do": { servo0: 82, servo1: 142, servo2: 124, servo3: 153 },
                     };
                     return [4 /*yield*/, servo3.angle(pianoPlace[soundCode]['servo2'])];
                 case 1:
                     _a.sent();
-                    return [4 /*yield*/, sleep(1500)];
+                    return [4 /*yield*/, sleep(1000)];
                 case 2:
                     _a.sent();
                     return [4 /*yield*/, servo1.angle(pianoPlace[soundCode]['servo1'])];
@@ -157,7 +185,7 @@ function moveToPiano(soundCode, servo0, servo1, servo2, servo3) {
                     return [4 /*yield*/, servo3.angle(pianoPlace[soundCode]['servo3'])];
                 case 5:
                     _a.sent();
-                    return [4 /*yield*/, sleep(1500)];
+                    return [4 /*yield*/, sleep(1000)];
                 case 6:
                     _a.sent();
                     return [4 /*yield*/, servo1.angle(180)];

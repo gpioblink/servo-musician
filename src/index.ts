@@ -14,15 +14,6 @@ obniz.onconnect = async function() {
   await servo1.angle(180);
   await servo2.angle(180);
 
-  await moveToPiano('Do', servo0, servo1, servo2, servo3);
-  await moveToPiano('si', servo0, servo1, servo2, servo3);
-  await moveToPiano('ra', servo0, servo1, servo2, servo3);
-  await moveToPiano('so', servo0, servo1, servo2, servo3);
-  await moveToPiano('fa', servo0, servo1, servo2, servo3);
-  await moveToPiano('mi', servo0, servo1, servo2, servo3);
-  await moveToPiano('re', servo0, servo1, servo2, servo3);
-  await moveToPiano('do', servo0, servo1, servo2, servo3);
-
   process.stdin.on('data', async function (chunk) {
     const lineString = chunk.toString().split(' ');
     const line = lineString.map( (x:any) => x = parseInt(x) );
@@ -37,6 +28,26 @@ obniz.onconnect = async function() {
     await servo1.angle(180);
     await servo2.angle(180);
   });
+
+  while(true){
+    await moveToPiano('Do', servo0, servo1, servo2, servo3);
+    await moveToPiano('si', servo0, servo1, servo2, servo3);
+    await moveToPiano('ra', servo0, servo1, servo2, servo3);
+    await moveToPiano('so', servo0, servo1, servo2, servo3);
+    await moveToPiano('fa', servo0, servo1, servo2, servo3);
+    await moveToPiano('mi', servo0, servo1, servo2, servo3);
+    await moveToPiano('re', servo0, servo1, servo2, servo3);
+    await moveToPiano('do', servo0, servo1, servo2, servo3);
+
+    await moveToPiano('do', servo0, servo1, servo2, servo3);
+    await moveToPiano('re', servo0, servo1, servo2, servo3);
+    await moveToPiano('mi', servo0, servo1, servo2, servo3);
+    await moveToPiano('fa', servo0, servo1, servo2, servo3);
+    await moveToPiano('so', servo0, servo1, servo2, servo3);
+    await moveToPiano('ra', servo0, servo1, servo2, servo3);
+    await moveToPiano('si', servo0, servo1, servo2, servo3);
+    await moveToPiano('Do', servo0, servo1, servo2, servo3);
+  }
 }
 
 type soundType = "do" | "re" | "mi" | "fa" | "so" | "ra" | "si" | "Do";
@@ -54,11 +65,11 @@ async function moveToPiano(soundCode: soundType, servo0: null, servo1: ServoMoto
   };
 
   await servo3.angle(pianoPlace[soundCode]['servo2']);
-  await sleep(1500);
+  await sleep(1000);
   await servo1.angle(pianoPlace[soundCode]['servo1']);
   await servo2.angle(pianoPlace[soundCode]['servo2']);
   await servo3.angle(pianoPlace[soundCode]['servo3']);
-  await sleep(1500);
+  await sleep(1000);
   await servo1.angle(180);
   await servo2.angle(180);
 }
