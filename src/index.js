@@ -47,7 +47,7 @@ obniz.onconnect = function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
-                    servo0 = null;
+                    servo0 = obniz.wired("ServoMotor", { signal: 0 });
                     servo1 = obniz.wired("ServoMotor", { signal: 1 });
                     servo2 = obniz.wired("ServoMotor", { signal: 2 });
                     servo3 = obniz.wired("ServoMotor", { signal: 3 });
@@ -67,29 +67,20 @@ obniz.onconnect = function () {
                                         line = lineString.map(function (x) { return x = parseInt(x); });
                                         obniz.display.clear();
                                         obniz.display.print(lineString);
-                                        return [4 /*yield*/, servo3.angle(line[2])];
+                                        return [4 /*yield*/, servo0.angle(line[0])];
                                     case 1:
                                         _a.sent();
-                                        return [4 /*yield*/, sleep(2000)];
+                                        return [4 /*yield*/, servo1.angle(line[1])];
                                     case 2:
                                         _a.sent();
-                                        return [4 /*yield*/, servo1.angle(line[0])];
+                                        return [4 /*yield*/, servo2.angle(line[2])];
                                     case 3:
                                         _a.sent();
-                                        return [4 /*yield*/, servo2.angle(line[1])];
+                                        return [4 /*yield*/, servo3.angle(line[3])];
                                     case 4:
                                         _a.sent();
-                                        return [4 /*yield*/, servo3.angle(line[2])];
+                                        return [4 /*yield*/, sleep(2000)];
                                     case 5:
-                                        _a.sent();
-                                        return [4 /*yield*/, sleep(3000)];
-                                    case 6:
-                                        _a.sent();
-                                        return [4 /*yield*/, servo1.angle(180)];
-                                    case 7:
-                                        _a.sent();
-                                        return [4 /*yield*/, servo2.angle(180)];
-                                    case 8:
                                         _a.sent();
                                         return [2 /*return*/];
                                 }
@@ -98,57 +89,81 @@ obniz.onconnect = function () {
                     });
                     _a.label = 3;
                 case 3:
-                    if (!true) return [3 /*break*/, 20];
-                    return [4 /*yield*/, moveToPiano('Do', servo0, servo1, servo2, servo3)];
+                    if (!true) return [3 /*break*/, 28];
+                    return [4 /*yield*/, beatTipDram('left', servo0, servo1, servo2, servo3)];
                 case 4:
                     _a.sent();
-                    return [4 /*yield*/, moveToPiano('si', servo0, servo1, servo2, servo3)];
+                    return [4 /*yield*/, sleep(800)];
                 case 5:
                     _a.sent();
-                    return [4 /*yield*/, moveToPiano('ra', servo0, servo1, servo2, servo3)];
+                    return [4 /*yield*/, beatTipDram('off', servo0, servo1, servo2, servo3)];
                 case 6:
                     _a.sent();
-                    return [4 /*yield*/, moveToPiano('so', servo0, servo1, servo2, servo3)];
+                    return [4 /*yield*/, sleep(800)];
                 case 7:
                     _a.sent();
-                    return [4 /*yield*/, moveToPiano('fa', servo0, servo1, servo2, servo3)];
+                    return [4 /*yield*/, beatTipDram('right', servo0, servo1, servo2, servo3)];
                 case 8:
                     _a.sent();
-                    return [4 /*yield*/, moveToPiano('mi', servo0, servo1, servo2, servo3)];
+                    return [4 /*yield*/, sleep(800)];
                 case 9:
                     _a.sent();
-                    return [4 /*yield*/, moveToPiano('re', servo0, servo1, servo2, servo3)];
+                    return [4 /*yield*/, beatTipDram('off', servo0, servo1, servo2, servo3)];
                 case 10:
                     _a.sent();
-                    return [4 /*yield*/, moveToPiano('do', servo0, servo1, servo2, servo3)];
+                    return [4 /*yield*/, sleep(800)];
                 case 11:
                     _a.sent();
-                    return [4 /*yield*/, moveToPiano('do', servo0, servo1, servo2, servo3)];
+                    return [4 /*yield*/, beatTipDram('insert', servo0, servo1, servo2, servo3)];
                 case 12:
                     _a.sent();
-                    return [4 /*yield*/, moveToPiano('re', servo0, servo1, servo2, servo3)];
+                    return [4 /*yield*/, sleep(800)];
                 case 13:
                     _a.sent();
-                    return [4 /*yield*/, moveToPiano('mi', servo0, servo1, servo2, servo3)];
+                    return [4 /*yield*/, beatTipDram('off', servo0, servo1, servo2, servo3)];
                 case 14:
                     _a.sent();
-                    return [4 /*yield*/, moveToPiano('fa', servo0, servo1, servo2, servo3)];
+                    return [4 /*yield*/, sleep(800)];
                 case 15:
                     _a.sent();
-                    return [4 /*yield*/, moveToPiano('so', servo0, servo1, servo2, servo3)];
+                    return [4 /*yield*/, beatTipDram('left', servo0, servo1, servo2, servo3)];
                 case 16:
                     _a.sent();
-                    return [4 /*yield*/, moveToPiano('ra', servo0, servo1, servo2, servo3)];
+                    return [4 /*yield*/, sleep(400)];
                 case 17:
                     _a.sent();
-                    return [4 /*yield*/, moveToPiano('si', servo0, servo1, servo2, servo3)];
+                    return [4 /*yield*/, beatTipDram('off', servo0, servo1, servo2, servo3)];
                 case 18:
                     _a.sent();
-                    return [4 /*yield*/, moveToPiano('Do', servo0, servo1, servo2, servo3)];
+                    return [4 /*yield*/, sleep(400)];
                 case 19:
                     _a.sent();
+                    return [4 /*yield*/, beatTipDram('right', servo0, servo1, servo2, servo3)];
+                case 20:
+                    _a.sent();
+                    return [4 /*yield*/, sleep(400)];
+                case 21:
+                    _a.sent();
+                    return [4 /*yield*/, beatTipDram('off', servo0, servo1, servo2, servo3)];
+                case 22:
+                    _a.sent();
+                    return [4 /*yield*/, sleep(400)];
+                case 23:
+                    _a.sent();
+                    return [4 /*yield*/, beatTipDram('insert', servo0, servo1, servo2, servo3)];
+                case 24:
+                    _a.sent();
+                    return [4 /*yield*/, sleep(400)];
+                case 25:
+                    _a.sent();
+                    return [4 /*yield*/, beatTipDram('off', servo0, servo1, servo2, servo3)];
+                case 26:
+                    _a.sent();
+                    return [4 /*yield*/, sleep(400)];
+                case 27:
+                    _a.sent();
                     return [3 /*break*/, 3];
-                case 20: return [2 /*return*/];
+                case 28: return [2 /*return*/];
             }
         });
     });
@@ -165,15 +180,15 @@ function moveToPiano(soundCode, servo0, servo1, servo2, servo3) {
                         "si": { servo0: 82, servo1: 130, servo2: 124, servo3: 88 },
                         "ra": { servo0: 82, servo1: 140, servo2: 124, servo3: 100 },
                         "so": { servo0: 82, servo1: 152, servo2: 136, servo3: 110 },
-                        "fa": { servo0: 82, servo1: 152, servo2: 137, servo3: 120 },
-                        "mi": { servo0: 82, servo1: 150, servo2: 135, servo3: 133 },
+                        "fa": { servo0: 82, servo1: 152, servo2: 136, servo3: 120 },
+                        "mi": { servo0: 82, servo1: 150, servo2: 133, servo3: 133 },
                         "re": { servo0: 82, servo1: 150, servo2: 130.7, servo3: 143 },
                         "do": { servo0: 82, servo1: 142, servo2: 124, servo3: 153 },
                     };
-                    return [4 /*yield*/, servo3.angle(pianoPlace[soundCode]['servo2'])];
+                    return [4 /*yield*/, sleep(1000)];
                 case 1:
                     _a.sent();
-                    return [4 /*yield*/, sleep(1000)];
+                    return [4 /*yield*/, servo0.angle(pianoPlace[soundCode]['servo0'])];
                 case 2:
                     _a.sent();
                     return [4 /*yield*/, servo1.angle(pianoPlace[soundCode]['servo1'])];
@@ -193,6 +208,48 @@ function moveToPiano(soundCode, servo0, servo1, servo2, servo3) {
                     _a.sent();
                     return [4 /*yield*/, servo2.angle(180)];
                 case 8:
+                    _a.sent();
+                    return [2 /*return*/];
+            }
+        });
+    });
+}
+function beatTipDram(moveCode, servo0, servo1, servo2, servo3) {
+    return __awaiter(this, void 0, void 0, function () {
+        var places;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    places = {
+                        "off": { servo0: 85, servo1: 180, servo2: 180, servo3: 120 },
+                        "left": { servo0: 85, servo1: 150, servo2: 180, servo3: 100 },
+                        "right": { servo0: 85, servo1: 150, servo2: 180, servo3: 135 },
+                        "insert": { servo0: 70, servo1: 150, servo2: 180, servo3: 120 }
+                    };
+                    console.log("moveArm", moveCode);
+                    return [4 /*yield*/, moveArm(places[moveCode], servo0, servo1, servo2, servo3)];
+                case 1:
+                    _a.sent();
+                    return [2 /*return*/];
+            }
+        });
+    });
+}
+function moveArm(armOptions, servo0, servo1, servo2, servo3) {
+    return __awaiter(this, void 0, void 0, function () {
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, servo0.angle(armOptions.servo0)];
+                case 1:
+                    _a.sent();
+                    return [4 /*yield*/, servo1.angle(armOptions.servo1)];
+                case 2:
+                    _a.sent();
+                    return [4 /*yield*/, servo2.angle(armOptions.servo2)];
+                case 3:
+                    _a.sent();
+                    return [4 /*yield*/, servo3.angle(armOptions.servo3)];
+                case 4:
                     _a.sent();
                     return [2 /*return*/];
             }
